@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Pixel Dungeon - Leonard Hemmerling</title>
+  <script type="module" crossorigin src="/pixel-dungeon-ts/assets/index-_ESlWXKl.js"></script>
+  <link rel="stylesheet" crossorigin href="/pixel-dungeon-ts/assets/index-DlkM6_QV.css">
+</head>
+<body>
+  <main id="app">
+    <header id="topHud">
+      <div class="titleRow">
+        <div>
+          <h1>PIXEL DUNGEON</h1>
+          <div class="creator">Creator: Leonard Hemmerling</div>
+        </div>
+        <div class="topButtons">
+          <button class="iconBtn" id="restartTop" title="Restart">↻</button>
+          <button class="iconBtn" id="menuTop" title="Menu">☰</button>
+        </div>
+      </div>
+
+      <section id="stats">
+        <div class="stat"><div class="label">LEVEL</div><div class="value" id="levelState">1</div></div>
+        <div class="stat"><div class="label">KEY</div><div class="value" id="keyState">No</div></div>
+        <div class="stat"><div class="label">NOTES</div><div class="value" id="noteState">0/4</div></div>
+        <div class="stat"><div class="label">BATTERY</div><div class="value" id="batteryState">100%</div><div class="barOuter"><div class="barInner" id="batteryBar"></div></div></div>
+        <div class="stat"><div class="label">PULSE</div><div class="value" id="fearState">Calm</div><div class="barOuter"><div class="barInner red" id="pulseBar"></div></div></div>
+        <div class="stat"><div class="label">AUDIO</div><div class="value" id="audioState">Off</div></div>
+      </section>
+    </header>
+
+    <section id="middle">
+      <div id="gameFrame">
+        <div id="game"></div>
+        <div id="menuOverlay">
+          <div class="menuPanel" id="mainMenu">
+            <h2>PIXEL DUNGEON</h2>
+            <p>A dark pixel horror dungeon. Find the notes, grab the key and escape before it finds you.</p>
+            <button class="menuBtn hidden" id="continueBtn">CONTINUE</button>
+            <button class="menuBtn" id="startBtn">START GAME</button>
+            <button class="menuBtn" id="settingsBtn">SETTINGS</button>
+            <button class="menuBtn" id="helpBtn">HELP</button>
+          </div>
+          <div class="menuPanel hidden" id="settingsMenu">
+            <h2>SETTINGS</h2>
+            <p>Audio uses your custom files from assets/audio. Loops get louder near the monster.</p>
+            <button class="menuBtn" id="musicToggle">MUSIC: ON</button>
+            <button class="menuBtn" id="audioTestBtn">AUDIO TEST</button>
+            <button class="menuBtn" data-back>BACK</button>
+          </div>
+          <div class="menuPanel hidden" id="helpMenu">
+            <h2>HELP</h2>
+            <p>
+              Move with the arrows or WASD.<br>
+              X / Space: action, collect items, hide in cabinets.<br>
+              Y / F: flashlight.<br>
+              Find all notes and the key, then reach the red door.<br>
+              If you hide in a cabinet, the monster will leave after about 3 seconds.
+            </p>
+            <button class="menuBtn" data-back>BACK</button>
+          </div>
+        </div>
+      </div>
+      <div id="message">Press Start Game.</div>
+    </section>
+
+    <nav id="controls" aria-label="Game controls">
+      <div class="dpad">
+        <button class="touchBtn blank" type="button" tabindex="-1">·</button>
+        <button class="touchBtn" type="button" data-hold-key="ArrowUp">▲</button>
+        <button class="touchBtn blank" type="button" tabindex="-1">·</button>
+        <button class="touchBtn" type="button" data-hold-key="ArrowLeft">◀</button>
+        <button class="touchBtn blank" type="button" tabindex="-1">·</button>
+        <button class="touchBtn" type="button" data-hold-key="ArrowRight">▶</button>
+        <button class="touchBtn blank" type="button" tabindex="-1">·</button>
+        <button class="touchBtn" type="button" data-hold-key="ArrowDown">▼</button>
+        <button class="touchBtn blank" type="button" tabindex="-1">·</button>
+      </div>
+      <div id="desktopHelp">Desktop: WASD/Arrows move · X/Space action · Y/F flashlight · R restart</div>
+      <div class="rightControls">
+        <div class="actions">
+          <button class="touchBtn btnX" type="button" data-tap-action="action">X<br>Action</button>
+          <button class="touchBtn btnY" type="button" data-tap-action="light">Y<br>Light</button>
+        </div>
+      </div>
+    </nav>
+  </main>
+</body>
+</html>
